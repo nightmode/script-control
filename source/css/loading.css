@@ -1,0 +1,124 @@
+/*
+Unique
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+::selection {
+    background: transparent;
+    color: inherit;
+}
+
+/*
+Font Families
+*/
+
+@font-face {
+    font-display: block;
+    font-family: 'Inter Medium';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/fonts/inter-medium.woff?version=2025.1.2.0') format('woff');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-display: block;
+    font-family: 'Inter SemiBold';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/fonts/inter-semibold.woff?version=2025.1.2.0') format('woff');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/*
+Elements
+*/
+
+body {
+    cursor: wait;
+    font-family: 'Inter Medium', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 0;
+    padding: 32px;
+}
+
+/*
+IDs
+*/
+
+#loading {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    padding: 32px;
+    position: absolute;
+    transition: 2s opacity ease-in-out;
+    z-index: 100;
+
+    /* position */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    /* animation */
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-name: loading_fade_in;
+    animation-timing-function: linear;
+}
+
+/*
+Combinations
+*/
+
+body.dark {
+    background: hsl(0 0% 15%);
+    color: hsl(0 0% 30%);
+    font-family: 'Inter SemiBold', Helvetica, Arial, sans-serif;
+}
+
+body.dark #loading {
+    filter: brightness(1.8);
+}
+
+#loading div {
+    margin: 8px 0 0 0;
+    padding: 0;
+    text-align: center;
+}
+
+#loading svg {
+    display: block;
+    height: 64px;
+    margin: 0 auto 10px auto;
+    width: 64px;
+
+    /* animation */
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: loading;
+    animation-timing-function: linear;
+}
+
+/*
+Animations
+*/
+
+@keyframes loading_fade_in {
+    0% { opacity: 0; }
+    25% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes loading {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
