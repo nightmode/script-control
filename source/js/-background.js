@@ -1273,56 +1273,17 @@ const install_or_upgrade = local.function.install_or_upgrade = async function in
             let check_version = ''
             const message_upgrade = 'install_or_upgrade -> upgrade for version less than '
 
-            check_version = '2021.4.6.0'
+            check_version = '2026.8.28.0'
             if (version_less_than(version_in_storage, check_version)) {
                 // version_in_storage is less than check_version
                 log(message_upgrade + check_version)
 
-                await preference_to_storage('theme_popup')
-            } // if
-
-            check_version = '2022.7.2.0'
-            if (version_less_than(version_in_storage, check_version)) {
-                // version_in_storage is less than check_version
-                log(message_upgrade + check_version)
-
-                const remove_patreon_items = [
-                    'demo',
-                    'full_name',
-                    'id',
-                    'last_updated',
-                    'lifetime_support_cents',
-                    'multipass',
-                    'patron_status'
-                ] // remove_patreon_items
-
-                for (const property of remove_patreon_items) {
-                    // remove patreon items from storage
-                    await storage_remove('patreon_' + property)
-                } // for
+                // show a one-time message
+                local.setting.show_message.upgrade_complete = true
 
                 // show extension page
                 local.setting.show_extension = true
-
-                // show a one-time message
-                local.setting.show_message.upgrade_free = true
             } // if
-
-            check_version = '2022.11.24.0'
-            if (version_less_than(version_in_storage, check_version)) {
-                // version_in_storage is less than check_version
-                log(message_upgrade + check_version)
-
-                await preference_to_storage('global_warn')
-            } // if
-
-            /*
-            // show a one-time message
-            local.setting.show_message.upgrade_complete = true
-
-            // show extension page
-            local.setting.show_extension = true
-            */
         } // upgrade
 
         if (local.setting.show_extension === true) {

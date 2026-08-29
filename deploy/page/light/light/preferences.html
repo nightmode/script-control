@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en" id="html">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/shared.css?version=2025.1.2.0">
+    <link rel="preload" href="/fonts/inter.woff?version=2025.1.2.0" as="font" crossorigin>
+    <link rel="preload" href="/fonts/inter-medium.woff?version=2025.1.2.0" as="font" crossorigin>
+    <link rel="preload" href="/fonts/inter-semibold.woff?version=2025.1.2.0" as="font" crossorigin>
+    <link rel="preload" href="/fonts/inter-bold.woff?version=2025.1.2.0" as="font" crossorigin>
+    <link rel="preload" href="/fonts/kufam.woff?version=2025.1.2.0" as="font" crossorigin>
+    <link rel="icon" href="/images/icon/logo/logo-light-32.png?version=2025.1.2.0" type="image/png">
+    <title>Script Control</title>
+</head>
+<body class="light">
+
+    <div class="wrapper">
+        <header>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill-rule="evenodd"><path d="M494.909 112.606c0-36.426-29.573-66-66-66H71.091c-36.427 0-66 29.574-66 66v274.788c0 36.426 29.573 66 66 66h357.818c36.427 0 66-29.574 66-66V112.606zm-267.832 179.49l-57.372-42.67c-5.058-3.763-12.22-2.71-15.983 2.349l-22.246 29.911c-3.763 5.059-2.71 12.22 2.349 15.983l96.409 71.934c3.663 2.716 8.421 2.912 12.196.896a11.364 11.364 0 003.956-3.349L368.39 202.367c3.756-5.064 2.693-12.225-2.372-15.98l-29.943-22.202c-5.064-3.756-12.225-2.693-15.98 2.372l-93.018 125.539zM71.539 86.556c11.453 0 20.752 9.299 20.752 20.753 0 11.453-9.299 20.753-20.752 20.753-11.454 0-20.753-9.3-20.753-20.753 0-11.454 9.299-20.753 20.753-20.753zm66 0c11.453 0 20.752 9.299 20.752 20.753 0 11.453-9.299 20.753-20.752 20.753-11.454 0-20.753-9.3-20.753-20.753 0-11.454 9.299-20.753 20.753-20.753zm66 0c11.453 0 20.752 9.299 20.752 20.753 0 11.453-9.299 20.753-20.752 20.753-11.454 0-20.753-9.3-20.753-20.753 0-11.454 9.299-20.753 20.753-20.753z" fill="#626262"/></svg>
+            <h1>Script Control</h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li>
+                    <a class="page" href="/page/light/light/options.html">
+                        <span>Options</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a class="page active" tabindex="-1">
+                        <span>Preferences</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="page" href="/page/light/light/about.html">
+                        <span>About</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="loading" class="loading">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M360.551 131.741c-30.126-28.208-69.22-43.67-110.696-43.633-74.643.065-139.083 51.245-156.874 122.24-1.296 5.167-5.9 8.817-11.228 8.817h-55.22c-7.225 0-12.714-6.56-11.378-13.662C36.005 94.78 133.218 11.015 250.001 11.015c64.033 0 122.183 25.186 165.089 66.189l34.416-34.417c14.57-14.57 39.481-4.251 39.481 16.354v129.186c0 12.774-10.354 23.128-23.128 23.128H336.673c-20.605 0-30.924-24.911-16.354-39.482l40.232-40.232zM34.143 288.547H163.33c20.605 0 30.924 24.912 16.354 39.482l-40.232 40.233c30.126 28.209 69.224 43.671 110.7 43.634 74.604-.068 139.07-51.212 156.87-122.239 1.296-5.167 5.9-8.817 11.228-8.817h55.222c7.225 0 12.713 6.56 11.377 13.66-20.851 110.722-118.064 194.487-234.847 194.487-64.033 0-122.183-25.186-165.089-66.189l-34.416 34.418c-14.57 14.57-39.48 4.25-39.48-16.355V311.675c0-12.773 10.353-23.128 23.127-23.128z" fill="#4d4d4d" fill-rule="nonzero"/></svg>
+                Loading
+            </div>
+        </div><!-- loading -->
+
+        <div id="content" class="content hidden">
+            <div id="permissions" class="hidden show-message">
+    <div class="box">
+        <div class="box-inner">
+            <h2>Permissions Required</h2>
+
+            <p>
+                Script Control requires permissions to function. Use the button below and then allow the required permissions in the prompt that follows.
+            </p>
+
+            <p>
+                <input class="button" id="allow-permissions" type="button" value="Allow Permissions">
+            </p>
+        </div><!-- box-inner -->
+    </div><!-- box -->
+</div><!-- permissions -->
+
+            <div id="show-message-upgrade-complete" class="hidden show-message">
+    <div class="box">
+        <div class="box-inner">
+<h2>Warning</h2>
+
+            <p>
+                This is the final version of Script Control.
+            </p>
+
+            <p>
+                On November 1, 2026 this software will be removed from GitHub, Google, Microsoft, Mozilla, and other software distribution locations.
+            </p>
+
+            <p>
+                If you wish to keep using Script Control or any of my other software going forward, you must download your own copy from <a href="https://github.com/nightmode?tab=repositories&sort=name" rel="noopener noreferrer" target="_blank">GitHub</a>. Each available project will have a releases section with an archive version you can download. All projects are in the public domain so you can modify, remix, redistribute, or do whatever you want.
+            </p>
+
+            <p>
+                You can run local extensions by activating developer mode in your browser and loading the extracted files from a location on your hard drive. It is a bit more intial setup but then you are in control.
+            </p>
+
+            <p>
+                If you DO NOT download Script Control, you will likely lose access to it once it disappears on November 1, 2026.
+            </p>
+
+            <p>
+                I know ownership is a chore but only ownership can ensure you enjoy your favorite movies, tv shows, music, books, and software as you travel through time. Take care.
+            </p>
+        </div><!-- box-inner -->
+    </div><!-- box -->
+</div><!-- show-message-upgrade-complete -->
+
+<div id="show-message-upgrade-free" class="hidden show-message">
+    <div class="box">
+        <div class="box-inner">
+            <p>
+                Script Control is now free.
+            </p>
+
+            <p>
+                If you have not used this software in awhile, you may want to review your options below. Otherwise, enjoy. ^_^
+            </p>
+
+            <p>
+                <input class="button show-message-dismiss" data-id="show-message-upgrade-free" type="button" value="Continue">
+            </p>
+        </div><!-- box-inner -->
+    </div><!-- box -->
+</div><!-- show-message-upgrade-free -->
+
+<div id="show-message-chrome-extensions-toolbar" class="hidden show-message">
+    <div class="box">
+        <div class="box-inner">
+            <p>
+                Google Chrome hides extensions by default but you can use the extensions <span class="no-wrap">menu <img src="/images/messages/chrome/puzzle.png?version=2025.1.2.0" width="18" height="18" class="icon icon-chrome-puzzle" alt></span> in the upper right of Chrome to enable the <span class="no-wrap">pin <img src="/images/messages/chrome/pin.png?version=2025.1.2.0" width="18" height="18" class="icon icon-chrome-pin" alt></span> option for Script Control.
+            </p>
+
+            <p>
+                The above procedure will allow the Script Control status <span class="no-wrap">icon <img src="/images/messages/chrome/status.png?version=2025.1.2.0" width="18" height="18" class="icon" alt></span> to be visible and enable one-click access.
+            </p>
+
+            <p>
+                <input class="button show-message-dismiss" data-id="show-message-chrome-extensions-toolbar" type="button" value="Continue">
+            </p>
+        </div><!-- box-inner -->
+    </div><!-- box -->
+</div><!-- show-message-chrome-extensions-toolbar -->
+
+<div id="show-message-edge-extensions-toolbar" class="hidden show-message">
+    <div class="box">
+        <div class="box-inner">
+            <p>
+                Microsoft Edge hides extensions by default but you can use the extensions <span class="no-wrap">menu <img src="/images/messages/edge/puzzle.png?version=2025.1.2.0" width="18" height="18" class="icon icon-edge-puzzle" alt></span> in the upper right of Edge to enable the <span class="no-wrap">eye <img src="/images/messages/edge/eye.png?version=2025.1.2.0" width="18" height="18" class="icon icon-edge-eye" alt></span> option for Script Control.
+            </p>
+
+            <p>
+                The above procedure will allow the Script Control status <span class="no-wrap">icon <img src="/images/messages/edge/status.png?version=2025.1.2.0" width="18" height="18" class="icon" alt></span> to be visible and enable one-click access.
+            </p>
+
+            <p>
+                <input class="button show-message-dismiss" data-id="show-message-edge-extensions-toolbar" type="button" value="Continue">
+            </p>
+        </div><!-- box-inner -->
+    </div><!-- box -->
+</div><!-- show-message-edge-extensions-toolbar -->
+
+<div id="show-message-firefox-extensions-toolbar" class="hidden show-message">
+    <div class="box">
+        <div class="box-inner">
+            <p>
+                Mozilla Firefox hides extensions by default but you can use the extensions <span class="no-wrap">menu <img src="/images/messages/firefox/puzzle.png?version=2025.1.2.0" width="18" height="18" class="icon" alt></span> in the upper right of Firefox to click on the <span class="no-wrap">gear <img src="/images/messages/firefox/gear.png?version=2025.1.2.0" width="18" height="18" class="icon" alt></span> for Script Control which will then reveal a "Pin to Toolbar" option.
+            </p>
+
+            <p>
+                The above procedure will allow the Script Control status <span class="no-wrap">icon <img src="/images/messages/firefox/status.png?version=2025.1.2.0" width="18" height="18" class="icon" alt></span> to be visible and enable one-click access.
+            </p>
+
+            <p>
+                <input class="button show-message-dismiss" data-id="show-message-firefox-extensions-toolbar" type="button" value="Continue">
+            </p>
+        </div><!-- box-inner -->
+    </div><!-- box -->
+</div><!-- show-message-firefox-extensions-toolbar -->
+
+            <h1>Preferences</h1>
+
+            <div class="box">
+                <div class="box-inner">
+                    <h3>
+                        Theme
+                    </h3>
+
+                    <p>
+                        Theme for pages that are displayed inside a browser tab.
+                    </p>
+
+                    <ol class="preference-row">
+                        <li>
+                            <input type="radio" is="custom-radio" data-preference="theme" name="theme" value="automatic" class="radio" id="radio-theme-automatic">
+
+                            <label for="radio-theme-automatic">
+                                Automatic
+                            </label>
+                        </li>
+                        <li>
+                            <input type="radio" is="custom-radio" data-preference="theme" name="theme" value="light" class="radio" id="radio-theme-light">
+
+                            <label for="radio-theme-light">
+                                Light
+                            </label>
+                        </li>
+                        <li>
+                            <input type="radio" is="custom-radio" data-preference="theme" name="theme" value="dark" class="radio" id="radio-theme-dark">
+
+                            <label for="radio-theme-dark">
+                                Dark
+                            </label>
+                        </li>
+                    </ol>
+                </div><!-- box-inner -->
+            </div><!-- box -->
+
+            <div class="box">
+                <div class="box-inner">
+                    <h3>
+                        Popup Theme
+                    </h3>
+
+                    <p>
+                        Theme for popups that do not appear inside a browser tab.
+                    </p>
+
+                    <ol class="preference-row">
+                        <li>
+                            <input type="radio" is="custom-radio" data-preference="theme_popup" name="theme_popup" value="automatic" class="radio" id="radio-theme-popup-automatic">
+
+                            <label for="radio-theme-popup-automatic">
+                                Automatic
+                            </label>
+                        </li>
+                        <li>
+                            <input type="radio" is="custom-radio" data-preference="theme_popup" name="theme_popup" value="light" class="radio" id="radio-theme-popup-light">
+
+                            <label for="radio-theme-popup-light">
+                                Light
+                            </label>
+                        </li>
+                        <li>
+                            <input type="radio" is="custom-radio" data-preference="theme_popup" name="theme_popup" value="dark" class="radio" id="radio-theme-popup-dark">
+
+                            <label for="radio-theme-popup-dark">
+                                Dark
+                            </label>
+                        </li>
+                    </ol>
+                </div><!-- box-inner -->
+            </div><!-- box -->
+
+            <div class="box">
+                <div class="box-inner">
+                    <h3>Icon Color</h3>
+
+                    <p>
+                        The color of the icon inside the tab handle of a browser tab.
+                    </p>
+
+                    <ol class="preference-row">
+                        <li>
+                            <input type="radio" is="custom-radio" data-preference="icon_color" name="icon_color" value="automatic" class="radio" id="radio-icon-color-automatic">
+
+                            <label for="radio-icon-color-automatic">
+                                Automatic
+                            </label>
+                        </li>
+                        <li>
+                            <input type="radio" is="custom-radio" data-preference="icon_color" name="icon_color" value="light" class="radio" id="radio-icon-color-light">
+
+                            <label for="radio-icon-color-light">
+                                Light
+                            </label>
+                        </li>
+                        <li>
+                            <input type="radio" is="custom-radio" data-preference="icon_color" name="icon_color" value="dark" class="radio" id="radio-icon-color-dark">
+
+                            <label for="radio-icon-color-dark">
+                                Dark
+                            </label>
+                        </li>
+                        <li>
+                            <input type="radio" is="custom-radio" data-preference="icon_color" name="icon_color" value="blue" class="radio" id="radio-icon-color-blue">
+
+                            <label for="radio-icon-color-blue">
+                                Blue
+                            </label>
+                        </li>
+                    </ol>
+                </div><!-- box-inner -->
+            </div><!-- box -->
+
+            <div class="box">
+                <div class="box-inner">
+                    <h3>Status Text</h3>
+
+                    <p>
+                        Display tiny text descriptions like allow and block along with the colorful status indicator in the toolbar.
+                    </p>
+
+                    <ol class="preference-row">
+                        <li>
+                            <input type="radio" is="custom-radio" data-preference="badge_text" name="badge_text" value="show" class="radio" id="radio-badge-text-show">
+
+                            <label for="radio-badge-text-show">
+                                Show
+                            </label>
+                        </li>
+                        <li>
+                            <input type="radio" is="custom-radio" data-preference="badge_text" name="badge_text" value="hide" class="radio" id="radio-badge-text-hide">
+
+                            <label for="radio-badge-text-hide">
+                                Hide
+                            </label>
+                        </li>
+                    </ol>
+                </div><!-- box-inner -->
+            </div><!-- box -->
+
+            <div class="box">
+                <div class="box-inner">
+                    <h3>Global Warning</h3>
+
+                    <p>
+                        Display a visual warning when a site without specific rules is allowed globally.
+                    </p>
+
+                    <ol class="preference-row">
+                        <li>
+                            <input type="radio" is="custom-radio" data-preference="global_warn" name="global_warn" value="show" class="radio" id="radio-global-warn-show">
+
+                            <label for="radio-global-warn-show">
+                                Show
+                            </label>
+                        </li>
+                        <li>
+                            <input type="radio" is="custom-radio" data-preference="global_warn" name="global_warn" value="hide" class="radio" id="radio-global-warn-hide">
+
+                            <label for="radio-global-warn-hide">
+                                Hide
+                            </label>
+                        </li>
+                    </ol>
+                </div><!-- box-inner -->
+            </div><!-- box -->
+        </div><!-- content -->
+    </div><!-- wrapper -->
+
+    <a href="#scroll-to-top" id="scroll-nav" class="hidden" tabIndex="-1" title="Scroll to Top">Scroll to Top</a>
+
+    <script src="/js/browser-polyfill.js?version=2025.1.2.0"></script>
+    <script src="/js/shared.js?version=2025.1.2.0"></script>
+    <script src="/js/page/preferences.js?version=2025.1.2.0"></script>
+
+</body>
+</html>

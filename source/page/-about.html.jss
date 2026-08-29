@@ -64,14 +64,20 @@
                         <strong id="about-version">1.0</strong>
                         <span id="about-browser"></span>
                     </p>
-
-                    <p>
-                        This software is provided under a no-contact and no-support model. Do not contact the author, for any reason, even if you think it would benefit the author.
-                    </p>
                 </div><!-- box-inner -->
             </div><!-- box -->
 
             <h2>Change Log</h2>
+
+            <div class="box">
+                <div class="box-inner">
+                    <h3>August 28, 2026</h3>
+
+                    <p>
+                        Archive version. No further changes planned.
+                    </p>
+                </div><!-- box-inner -->
+            </div><!-- box -->
 
             <div class="box">
                 <div class="box-inner">
